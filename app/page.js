@@ -1,6 +1,6 @@
 "use client"
-import Navbar from "/home/monster/Documents/Portfolio/portfolio/app/Navbar.js"
 import SectionA from "./Component/SectionA"
+import Navbar from "./Navbar"
 
 export default function Home() {
   return (
