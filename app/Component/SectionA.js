@@ -17,7 +17,7 @@ const SectionA = () => {
               fontSize: "16px",
             }}
           >
-            ✌🏻{"  "}Hi There I'm Harsh
+            ✌🏻{"  "}Hi There I m Harsh
           </CardContent>
 
           <CardContent
