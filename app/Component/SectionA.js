@@ -2,48 +2,56 @@ import { Box, Card, CardContent, Stack } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import section1 from "../Media/section1.webp";
+import {Bruno_Ace} from "next/font/google"
+
+const bruno=Bruno_Ace({subsets:['latin'],weight:'400'})
+
 const SectionA = () => {
   return (
-    <Box>
+    
       <Stack
         direction={{ xs: "column", lg: "row" }}
-        sx={{ mt: { lg: "10%" }, justifyContent: "space-between" }}
+        sx={{m:"200px 40px"}}
       >
-        <Box sx={{ width: { xs: "80vw", lg: "50vw" } }}>
+        <Box sx={{ width: { xs: "80vw", lg: "40vw" } }}>
           <CardContent
             sx={{
               display: "inline-block",
-              backgroundColor: "#FF000080",
-              fontSize: "16px",
+              backgroundColor: "rgb(233 20 20 / 16%)",
+              fontSize: "13px",
+              borderRadius:"10px",
+              color:"Red"
             }}
           >
             ✌🏻{"  "}Hi There I m Harsh
           </CardContent>
 
           <CardContent
+          className={bruno.className}
             sx={{
-              fontSize: "4vw",
-              color: "white",
+              fontSize: { xs: "16px",sm:"28px",md:"30px",lg: "36px" },
+              color:"white",
               p: "10px 0px",
-              letterSpacing: "3px",
-              lineHeight: "45px",
+              letterSpacing: ".02rem",
+              lineHeight: {xs:"30px",sm:"40px",md:"60px",lg:"60px"},
+              textTransform:"capitalize",
+              textShadow:"3px 3px 0 #1f2127, -1px -1px 0 #1f2127, 1px -1px 0 #1f2127, -1px 1px 0 #1f2127, 1px 1px 0 #1f2127"
             }}
           >
-            A Frontend Engineer. I Help Startups Launch And Grow Their Products
+            Creating Engaging Websites for a Digital World. Transforming Ideas
+            into Beautiful Online Experiences.{" "}
           </CardContent>
 
-          <CardContent sx={{ color: "white" }}>
-            i am a software engineer with more than four years of experience.
-            recognized as a practical and effective developer, experienced in
-            leading cross-functional teams in a time-pressured setting to
-            complete projects on schedule and within budget.
+          <CardContent sx={{ color: "white",fontSize:"15px" }}>
+            Motivated fresher with a diverse portfolio of projects. Passionate
+            about continuous learning and delivering high-quality solutions.
+            Committed to effective collaboration and achieving success.
           </CardContent>
         </Box>
-        <Box sx={{ width: { xs: "80vw", lg: "30vw" } }}>
+        <Box sx={{ width: { xs: "80vw", lg: "40vw" },display:"flex",justifyContent:"center" }}>
           <Image src={section1} />
         </Box>
       </Stack>
-    </Box>
   );
 };
 
