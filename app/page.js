@@ -1,18 +1,17 @@
 "use client"
-import { Stack } from "@mui/material"
-import SectionA from "./Component/SectionA"
-import SectionB from "./Component/SectionB"
+import { Box, Stack } from "@mui/material"
 import Navbar from "./Navbar"
+import Introduction from "./Component/Introduction"
+import About from "./Component/About"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col  bg-black">
-      <div className="font-mono text-sm lg:flex">
+    <main className="flex min-h-screen flex-col  bg-white" >
+      <div className="font-mono text-sm ">
       <Navbar />
-      <Stack>
-     <SectionA/>
-      <SectionB/>
-      </Stack>
+        <Introduction/>
+        <About/>
+      
       </div>
     </main>
   )
