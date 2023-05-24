@@ -52,7 +52,7 @@ const About = () => {
             <Stack gap={2}>
           <CardContent sx={{ fontWeight: "bold",textAlign:"left",fontSize:"26px",pl:"0px"}}>Get to know me!</CardContent>
           <Typography sx={{ textAlignLast: "left",fontSize:"17px",color:"#666666" }}>
-            I'm a Frontend Web Developer building the Front-end of Websites and
+            I am a Frontend Web Developer building the Front-end of Websites and
             Web Applications that leads to the success of the overall product.
             Check out some of my work in the Projects section.
           </Typography>
@@ -64,9 +64,9 @@ const About = () => {
           <Typography sx={{ textAlignLast: "left",fontSize:"17px",color:"#666666" }}>
             Feel free to Connect or Follow me on my
             Linkedin where I post useful content related to Web Development and
-            Programming I'm open to Job opportunities where I can contribute,
+            Programming I am open to Job opportunities where I can contribute,
             learn and grow. If you have a good opportunity that matches my
-            skills and experience then don't hesitate to contact me.
+            skills and experience then do not hesitate to contact me.
           </Typography>
           </Stack>
         </Box>
