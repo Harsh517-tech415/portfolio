@@ -202,7 +202,6 @@ const Project = () => {
           </Stack>
           <Divider />
 
-
           <Stack direction={{ xs: "column", lg: "row" }}>
             <Box sx={{ width: { lg: "40%" } }}>
               <Tabs
@@ -236,12 +235,12 @@ const Project = () => {
                 campusSync <Chip label="Apr 2023- May 2023" color="success" />
               </CardContent>
               <CardContent>
-                Unlock your fitness potential with FitFinder - the ultimate
-                platform tailored for passionate fitness enthusiasts. Discover a
-                wide range of personalized workouts, curated resources, and
-                tools designed to empower and inspire you on your fitness
-                journey. Embrace a healthier, stronger, and more fulfilling
-                lifestyle with FitFinder as your trusted companion.
+                Enhance campus communication with CampusSync - the go-to
+                platform for colleges and schools to send important
+                notifications to students. Stay informed about events,
+                deadlines, and essential information effortlessly. Experience
+                seamless connectivity and effective communication with
+                CampusSync.
               </CardContent>
               <Button
                 onClick={() => {
@@ -305,12 +304,13 @@ const Project = () => {
                 TVMaze <Chip label="May 2022" color="success" />
               </CardContent>
               <CardContent>
-                Unlock your fitness potential with FitFinder - the ultimate
-                platform tailored for passionate fitness enthusiasts. Discover a
-                wide range of personalized workouts, curated resources, and
-                tools designed to empower and inspire you on your fitness
-                journey. Embrace a healthier, stronger, and more fulfilling
-                lifestyle with FitFinder as your trusted companion.
+                Embark on a captivating journey through the world of television
+                with TVMaxe - the premier blogging platform for TV enthusiasts.
+                Discover insightful articles, engaging reviews, and
+                thought-provoking discussions about your favorite shows and
+                movies. Immerse yourself in a treasure trove of television
+                knowledge and fuel your passion for the small screen with
+                TVMaxe.
               </CardContent>
               <Button
                 onClick={() => {
@@ -371,12 +371,12 @@ const Project = () => {
                 To-Do-List <Chip label="Mar 2022" color="success" />
               </CardContent>
               <CardContent>
-                Unlock your fitness potential with FitFinder - the ultimate
-                platform tailored for passionate fitness enthusiasts. Discover a
-                wide range of personalized workouts, curated resources, and
-                tools designed to empower and inspire you on your fitness
-                journey. Embrace a healthier, stronger, and more fulfilling
-                lifestyle with FitFinder as your trusted companion.
+                Stay organized and accomplish more with EasyTasks - the
+                essential to-do list platform with basic features. Effortlessly
+                manage your tasks, set reminders, and track your progress.
+                Simplify your life and boost your productivity with EasyTasks,
+                your trusted companion for staying on top of your daily
+                responsibilities.
               </CardContent>
               <Button
                 onClick={() => {
@@ -427,9 +427,14 @@ const Project = () => {
                 setOpenDialog(false);
               }, 200);
             }}
-            sx={{ position: "absolute", right: 0, mr: 2,color:"white" }}
+            sx={{ position: "absolute", right: 0, mr: 2, color: "white" }}
           >
-           <CardContent sx={{backgroundColor:"red",p:"5px 5px",borderRadius:"5px"}}> <CloseIcon /></CardContent>
+            <CardContent
+              sx={{ backgroundColor: "red", p: "5px 5px", borderRadius: "5px" }}
+            >
+              {" "}
+              <CloseIcon />
+            </CardContent>
           </Button>
           <Card>
             <iframe width={width} height={height} src={site}></iframe>
