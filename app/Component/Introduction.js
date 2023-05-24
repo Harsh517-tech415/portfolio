@@ -1,9 +1,10 @@
 import { Box, Button, CardContent, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import bg from "../Media/bg.png";
 import Image from "next/image";
 
 const Introduction = () => {
+  
   return (
     <Box
       sx={{
