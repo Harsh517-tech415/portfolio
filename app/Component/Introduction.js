@@ -1,13 +1,19 @@
 import { Box, Button, CardContent, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import bg from "../Media/bg.png";
+import { ColorModeContext, theme } from "../page";
 
 const Introduction = () => {
-  
+  const [url,setUrl]=useState(`url(${bg.src})`)
+  const {mode}=useContext(ColorModeContext)
+  useEffect(()=>{
+    mode==="light"?setUrl(`url(${bg.src})`):setUrl("")
+  }
+  ,[mode])
   return (
     <Box
       sx={{
-        backgroundImage: `url(${bg.src})`,
+        backgroundImage: url,
         width: "100%",
         display: "flex",
         justifyContent: "center",
