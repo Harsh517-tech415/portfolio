@@ -133,7 +133,7 @@ const Project = () => {
       </CardContent>
       <CardContent sx={{ display: "flex", justifyContent: "center" }}>
         <Stack sx={{ p: "100px 28px", ml: "10%", mr: "10%" }}>
-          <Stack direction={{ xs: "column", lg: "row" }}>
+          <Stack direction={{ xs: "column", lg: "row" }} sx={{pb:"20px"}}gap={6}>
             <Box sx={{ width: { lg: "40%" } }}>
               <Tabs
                 textColor="secondary"
@@ -202,7 +202,7 @@ const Project = () => {
           </Stack>
           <Divider />
 
-          <Stack direction={{ xs: "column", lg: "row" }}>
+          <Stack direction={{ xs: "column", lg: "row" }} sx={{pb:"20px"}}gap={6}>
             <Box sx={{ width: { lg: "40%" } }}>
               <Tabs
                 textColor="secondary"
@@ -270,7 +270,7 @@ const Project = () => {
             </Box>
           </Stack>
           <Divider />
-          <Stack direction={{ xs: "column", lg: "row" }}>
+          <Stack direction={{ xs: "column", lg: "row" }} sx={{pb:"20px"}}gap={6}>
             <Box sx={{ width: { lg: "40%" } }}>
               {" "}
               <Tabs
@@ -340,7 +340,7 @@ const Project = () => {
             </Box>
           </Stack>
           <Divider />
-          <Stack direction={{ xs: "column", lg: "row" }}>
+          <Stack direction={{ xs: "column", lg: "row" }} sx={{pb:"20px"}}gap={6}>
             <Box sx={{ width: { lg: "40%" } }}>
               {" "}
               <Tabs
