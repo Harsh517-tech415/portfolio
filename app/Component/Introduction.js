@@ -35,7 +35,7 @@ const Introduction = () => {
               lineHeight:1
             }}
           >
-            HEY, I'M HARSH CHOUDHARY
+            HEY, I AM HARSH CHOUDHARY
           </CardContent>
           <CardContent
             sx={{ lineHeight: "1.6", color: "#33333",textAlign:"center" ,textAlignLast: "center",p:{xs:"20px 10px",lg:"16px 500px"} }}
