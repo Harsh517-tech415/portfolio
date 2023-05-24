@@ -17,7 +17,7 @@ const About = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          pt: "20px",
+          pt: "13px",
           pb: "1px",
         }}
       >
@@ -40,14 +40,15 @@ const About = () => {
           fontSize: "16px",
           lineHeight: 1.7,
           letterSpacing: "1px",
+          m:"auto"
         }}
       >
         Here you will find more information about me, what I do, and my current
         skills mostly in terms of programming and technology
       </CardContent>
       </Box>
-      <Stack direction={{xs:"column",md:"row"}} sx={{justifyContent:"space-between"}}>
-        <Box sx={{ width: "50%" }}>
+      <Stack direction={{xs:"column",md:"row"}} sx={{justifyContent:{xs:"center",md:"space-between"}}} gap={{xs:4,sm:4}}>
+        <Box sx={{ width: {md:"40%"},display:"flex",justifyContent:"center"}}>
             <Stack gap={2}>
           <CardContent sx={{ fontWeight: "bold",textAlign:"left",fontSize:"26px",pl:"0px"}}>Get to know me!</CardContent>
           <Typography sx={{ textAlignLast: "left",fontSize:"17px",color:"#666666" }}>
@@ -69,8 +70,8 @@ const About = () => {
           </Typography>
           </Stack>
         </Box>
-        <Box sx={{ width: "40%" }}>
-            <CardContent>MY SKILLS</CardContent>
+        <Box sx={{ width: {md:"40%"}}}>
+            <CardContent sx={{fontWeight:"bold",fontSize:"26px",pb:"30px"}}>MY SKILLS</CardContent>
             <Box sx={{display:"flex",flexWrap:"wrap"}} gap={3}>
                 <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px"}}>ReactJs</CardContent>
                 <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px"}}>NextJs</CardContent>

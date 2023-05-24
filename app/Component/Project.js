@@ -132,8 +132,12 @@ const Project = () => {
         </CardContent>
       </CardContent>
       <CardContent sx={{ display: "flex", justifyContent: "center" }}>
-        <Stack sx={{ p: "100px 28px", ml: "10%", mr: "10%" }}>
-          <Stack direction={{ xs: "column", lg: "row" }} sx={{pb:"20px"}}gap={6}>
+        <Stack sx={{ p: {md:"100px 28px"}, ml: "10%", mr: "10%" }}>
+          <Stack
+            direction={{ xs: "column", lg: "row" }}
+            sx={{ pb: "20px" }}
+            gap={{ xs: 4, lg: 6 }}
+          >
             <Box sx={{ width: { lg: "40%" } }}>
               <Tabs
                 textColor="secondary"
@@ -161,7 +165,7 @@ const Project = () => {
                 <Image src={mobile1} />
               </TabPanel>
             </Box>
-            <Box sx={{ width: { lg: "40%" } }}>
+            <Stack sx={{ width: { lg: "40%" }, mt: { lg: "8%" } }}>
               <CardContent sx={{ fontWeight: "bold", fontSize: "18px" }}>
                 FitFinder <Chip label="Jan 2023- Mar 2023" color="success" />
               </CardContent>
@@ -173,37 +177,51 @@ const Project = () => {
                 journey. Embrace a healthier, stronger, and more fulfilling
                 lifestyle with FitFinder as your trusted companion.
               </CardContent>
-              <Button
-                onClick={() => {
-                  setSite("https://main--fit-finder.netlify.app/");
-                  setOpenDialog(true);
-                }}
-              >
-                <CardContent
-                  variant="contained"
+              <Stack direction="row">
+                <Button
                   sx={{
-                    backgroundColor: "purple",
-                    color: "white",
-                    borderRadius: "30px",
-                    p: "12px 30px",
+                    display: { xs: "none", lg: "inline" },
+                  }}
+                  onClick={() => {
+                    setSite("https://main--fit-finder.netlify.app/");
+                    setOpenDialog(true);
                   }}
                 >
-                  Preview
-                </CardContent>
-              </Button>{" "}
-              <Button
-                variant="outlined"
-                color="secondary"
-                sx={{ borderRadius: "30px", fontSize: "14px", p: "12px 30px" }}
-              >
-                Visit Site
-              </Button>
-            </Box>
+                  <CardContent
+                    variant="contained"
+                    sx={{
+                      backgroundColor: "purple",
+                      color: "white",
+                      borderRadius: "30px",
+                      p: "12px 30px",
+                    }}
+                  >
+                    Preview
+                  </CardContent>
+                </Button>{" "}
+                <Button
+                  variant="outlined"
+                  color="secondary"
+                  sx={{
+                    borderRadius: "30px",
+                    fontSize: "14px",
+                    p: "12px 30px",
+                  }}
+                  href="https://main--fit-finder.netlify.app/"
+                >
+                  Visit Site
+                </Button>
+              </Stack>
+            </Stack>
           </Stack>
-          <Divider />
+          <Divider sx={{ p: "50px 0px" }} />
 
-          <Stack direction={{ xs: "column", lg: "row" }} sx={{pb:"20px"}}gap={6}>
-            <Box sx={{ width: { lg: "40%" } }}>
+          <Stack
+            direction={{ xs: "column", lg: "row" }}
+
+            gap={6}
+          >
+            <Stack sx={{ width: { lg: "40%" } }}>
               <Tabs
                 textColor="secondary"
                 indicatorColor="secondary"
@@ -229,8 +247,8 @@ const Project = () => {
               <TabPanel value={value} index={3}>
                 <Image src={mobile2} />
               </TabPanel>
-            </Box>
-            <Box sx={{ width: { lg: "40%" } }}>
+            </Stack>
+            <Stack sx={{ width: { lg: "40%" }, mt: { lg: "8%" } }}>
               <CardContent sx={{ fontWeight: "bold", fontSize: "18px" }}>
                 campusSync <Chip label="Apr 2023- May 2023" color="success" />
               </CardContent>
@@ -242,36 +260,50 @@ const Project = () => {
                 seamless connectivity and effective communication with
                 CampusSync.
               </CardContent>
-              <Button
-                onClick={() => {
-                  setSite("https://campusync.netlify.app");
-                  setOpenDialog(true);
-                }}
-              >
-                <CardContent
-                  variant="contained"
+              <Stack direction="row">
+                <Button
                   sx={{
-                    backgroundColor: "purple",
-                    color: "white",
-                    borderRadius: "30px",
-                    p: "12px 30px",
+                    display: { xs: "none", lg: "inline" },
+                  }}
+                  onClick={() => {
+                    setSite("https://campusync.netlify.app");
+                    setOpenDialog(true);
                   }}
                 >
-                  Preview
-                </CardContent>
-              </Button>{" "}
-              <Button
-                variant="outlined"
-                color="secondary"
-                sx={{ borderRadius: "30px", fontSize: "14px", p: "12px 30px" }}
-              >
-                Visit Site
-              </Button>
-            </Box>
+                  <CardContent
+                    variant="contained"
+                    sx={{
+                      backgroundColor: "purple",
+                      color: "white",
+                      borderRadius: "30px",
+                      p: "12px 30px",
+                    }}
+                  >
+                    Preview
+                  </CardContent>
+                </Button>{" "}
+                <Button
+                  variant="outlined"
+                  color="secondary"
+                  sx={{
+                    borderRadius: "30px",
+                    fontSize: "14px",
+                    p: "12px 30px",
+                  }}
+                  href="https://campusync.netlify.app"
+                >
+                  Visit Site
+                </Button>
+              </Stack>
+            </Stack>
           </Stack>
-          <Divider />
-          <Stack direction={{ xs: "column", lg: "row" }} sx={{pb:"20px"}}gap={6}>
-            <Box sx={{ width: { lg: "40%" } }}>
+          <Divider sx={{ p: "50px 0px" }} />
+          <Stack
+            direction={{ xs: "column", lg: "row" }}
+
+            gap={6}
+          >
+            <Stack sx={{ width: { lg: "40%" } }}>
               {" "}
               <Tabs
                 textColor="secondary"
@@ -298,8 +330,8 @@ const Project = () => {
               <TabPanel value={value} index={3}>
                 <Image src={mobile3} />
               </TabPanel>
-            </Box>
-            <Box sx={{ width: { lg: "40%" } }}>
+            </Stack>
+            <Stack sx={{ width: { lg: "40%" }, mt: { lg: "8%" } }}>
               <CardContent sx={{ fontWeight: "bold", fontSize: "18px" }}>
                 TVMaze <Chip label="May 2022" color="success" />
               </CardContent>
@@ -312,36 +344,50 @@ const Project = () => {
                 knowledge and fuel your passion for the small screen with
                 TVMaxe.
               </CardContent>
-              <Button
-                onClick={() => {
-                  setSite("https://vmaze.netlify.app/");
-                  setOpenDialog(true);
-                }}
-              >
-                <CardContent
-                  variant="contained"
+              <Stack direction="row">
+                <Button
                   sx={{
-                    backgroundColor: "purple",
-                    color: "white",
-                    borderRadius: "30px",
-                    p: "12px 30px",
+                    display: { xs: "none", lg: "inline" },
+                  }}
+                  onClick={() => {
+                    setSite("https://vmaze.netlify.app/");
+                    setOpenDialog(true);
                   }}
                 >
-                  Preview
-                </CardContent>
-              </Button>{" "}
-              <Button
-                variant="outlined"
-                color="secondary"
-                sx={{ borderRadius: "30px", fontSize: "14px", p: "12px 30px" }}
-              >
-                Visit Site
-              </Button>
-            </Box>
+                  <CardContent
+                    variant="contained"
+                    sx={{
+                      backgroundColor: "purple",
+                      color: "white",
+                      borderRadius: "30px",
+                      p: "12px 30px",
+                    }}
+                  >
+                    Preview
+                  </CardContent>
+                </Button>{" "}
+                <Button
+                  variant="outlined"
+                  color="secondary"
+                  sx={{
+                    borderRadius: "30px",
+                    fontSize: "14px",
+                    p: "12px 30px",
+                  }}
+                  href="https://vmaze.netlify.app/"
+                >
+                  Visit Site
+                </Button>
+              </Stack>
+            </Stack>
           </Stack>
-          <Divider />
-          <Stack direction={{ xs: "column", lg: "row" }} sx={{pb:"20px"}}gap={6}>
-            <Box sx={{ width: { lg: "40%" } }}>
+          <Divider sx={{ p: "50px 0px" }} />
+          <Stack
+            direction={{ xs: "column", lg: "row" }}
+
+            gap={6}
+          >
+            <Stack sx={{ width: { lg: "40%" } }}>
               {" "}
               <Tabs
                 textColor="secondary"
@@ -365,8 +411,8 @@ const Project = () => {
               <TabPanel value={value} index={2}>
                 <Image src={tab4} />
               </TabPanel>
-            </Box>
-            <Box sx={{ width: { lg: "40%" } }}>
+            </Stack>
+            <Stack sx={{ width: { lg: "40%" }, mt: { lg: "8%" } }}>
               <CardContent sx={{ fontWeight: "bold", fontSize: "18px" }}>
                 To-Do-List <Chip label="Mar 2022" color="success" />
               </CardContent>
@@ -378,34 +424,44 @@ const Project = () => {
                 your trusted companion for staying on top of your daily
                 responsibilities.
               </CardContent>
-              <Button
-                onClick={() => {
-                  setSite("https://my-todo-39725.web.app/");
-                  setOpenDialog(true);
-                }}
-              >
-                <CardContent
-                  variant="contained"
+              <Stack direction="row">
+                <Button
                   sx={{
-                    backgroundColor: "purple",
-                    color: "white",
-                    borderRadius: "30px",
-                    p: "12px 30px",
+                    display: { xs: "none", lg: "inline" },
+                  }}
+                  onClick={() => {
+                    setSite("https://my-todo-39725.web.app/");
+                    setOpenDialog(true);
                   }}
                 >
-                  Preview
-                </CardContent>
-              </Button>{" "}
-              <Button
-                variant="outlined"
-                color="secondary"
-                sx={{ borderRadius: "30px", fontSize: "14px", p: "12px 30px" }}
-              >
-                Visit Site
-              </Button>
-            </Box>
+                  <CardContent
+                    variant="contained"
+                    sx={{
+                      backgroundColor: "purple",
+                      color: "white",
+                      borderRadius: "30px",
+                      p: "12px 30px",
+                    }}
+                  >
+                    Preview
+                  </CardContent>
+                </Button>{" "}
+                <Button
+                  variant="outlined"
+                  color="secondary"
+                  sx={{
+                    borderRadius: "30px",
+                    fontSize: "14px",
+                    p: "12px 30px",
+                  }}
+                  href="https://my-todo-39725.web.app/"
+                >
+                  Visit Site
+                </Button>
+              </Stack>
+            </Stack>
           </Stack>
-          <Divider />
+          <Divider sx={{ p: "50px 0px" }} />
         </Stack>
       </CardContent>
       {openDialog ? (

@@ -4,20 +4,25 @@ import {
   Box,
   Button,
   CardContent,
+  Divider,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
   Stack,
   Typography,
 } from "@mui/material";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Oswald } from "next/font/google";
 import { blue, deepPurple, purple, yellow } from "@mui/material/colors";
 const oswald = Oswald({ subsets: ["latin"], weight: "400" });
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   return (
-    <AppBar 
-    className={oswald.className}
-    sx={{backgroundColor:"white"}} >
+    <AppBar className={oswald.className} sx={{ backgroundColor: "white" }}>
       <Stack
         direction="row"
         sx={{ display: "flex", justifyContent: "space-between" }}
@@ -61,6 +66,9 @@ const Navbar = () => {
               <Link href="/">Home</Link>
             </Button>
             <Button
+              onClick={() => {
+                window.scroll({ top: 900, behavior: "smooth" });
+              }}
               sx={{
                 color: "black",
                 fontWeight: "bold",
@@ -74,6 +82,9 @@ const Navbar = () => {
                 color: "black",
                 fontWeight: "bold",
                 fontSize: { sm: "1.7vw", md: "1.3vw", lg: ".8vw" },
+              }}
+              onClick={() => {
+                window.scroll({ top: 1900, behavior: "smooth" });
               }}
             >
               Projects
@@ -90,9 +101,54 @@ const Navbar = () => {
             <CardContent></CardContent>
           </Stack>
         </CardContent>
-        <Button sx={{ display: { xs: "flex", sm: "none" } }}>
+        <Button
+          sx={{ display: { xs: "flex", sm: "none" } }}
+          onClick={() => {
+            setOpen(true);
+          }}
+        >
           <MenuIcon sx={{ fontSize: "50px", color: "black" }} />
         </Button>
+        <Drawer
+          open={open}
+          onClose={() => {
+            setOpen(false);
+          }}
+        >
+          <List>
+            
+              <ListItemButton href="/">
+                <ListItemText primary="Home" sx={{p:"2px 20px"}} />
+              </ListItemButton>
+            
+              <Divider/>
+            
+              <ListItemButton
+                onClick={() => {
+                  window.scroll({ top: 700, behavior: "smooth" });
+                }}
+              >
+                <ListItemText primary="About" sx={{p:"2px 20px"}} />
+              </ListItemButton>
+            
+              <Divider/>
+            
+              <ListItemButton
+                onClick={() => {
+                  window.scroll({ top: 2200, behavior: "smooth" });
+                }}
+              >
+                <ListItemText primary="Projects" sx={{p:"2px 20px"}} />
+              </ListItemButton>
+            
+              <Divider/>
+            
+              <ListItemButton>
+                <ListItemText primary="Contact" sx={{p:"2px 20px"}} />
+              </ListItemButton>
+            
+          </List>
+        </Drawer>
       </Stack>
     </AppBar>
   );
