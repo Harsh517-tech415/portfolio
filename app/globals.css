@@ -2,3 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+textarea.focused {
+    outline: none;
+    border-color: transparent;
+    caret-color: black;
+    animation: blink-caret 1s step-end infinite;
+    padding-left: 15px;
+  }
+  
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: black;
+    }
+  }

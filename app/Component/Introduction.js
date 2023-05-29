@@ -2,7 +2,10 @@ import { Box, Button, CardContent, Stack, Typography } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import bg from "../Media/bg.png";
 import { ColorModeContext, theme } from "../page";
-
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
+import Link from "next/link";
 const Introduction = () => {
   const [url,setUrl]=useState(`url(${bg.src})`)
   const {mode}=useContext(ColorModeContext)
@@ -49,6 +52,13 @@ const Introduction = () => {
             onClick={() => {
               window.scroll({ top: 1900, behavior: "smooth" });
             }}>Projects</Button>
+          </CardContent>
+          <CardContent sx={{display:"flex",justifyContent:"center"}}>
+            <Stack direction="row" gap={4}>
+              <Link href="https://www.linkedin.com/in/harsh-choudhary-09184817a/"><LinkedInIcon sx={{color:"white",fontSize:"50px",backgroundColor:"grey",borderRadius:"20px",p:"5px 5px"}}/></Link>
+              <Link href="https://github.com/Harsh517-tech415"><GitHubIcon sx={{color:"white",fontSize:"50px",backgroundColor:"grey",borderRadius:"20px",p:"5px 5px"}}/></Link>
+              {/* <a href="mailto:harshconsult3@gmail.com"><EmailIcon sx={{color:"white",fontSize:"50px",backgroundColor:"grey",borderRadius:"20px",p:"5px 5px"}}/></a> */}
+            </Stack>
           </CardContent>
         </Stack>
       </Box>

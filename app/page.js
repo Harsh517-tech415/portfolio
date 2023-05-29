@@ -7,6 +7,7 @@ import Project from "./Component/Project";
 import { createContext, useState } from "react";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import Contact from "./Component/Contact";
 export const ColorModeContext = createContext();
 
 const getDesignTokens = (mode) => {
@@ -81,6 +82,7 @@ export default function Home() {
             <Introduction />
             <About />
             <Project />
+            <Contact/>
           </div>
         </main>
       </ThemeProvider>
