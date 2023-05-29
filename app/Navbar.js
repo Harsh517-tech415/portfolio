@@ -132,6 +132,9 @@ const Navbar = () => {
                 fontWeight: "bold",
                 fontSize: { sm: "1.7vw", md: "1.3vw", lg: ".8vw" },
               }}
+              onClick={() => {
+                window.scroll({ top: 7500, behavior: "smooth" });
+              }}
             >
               Contacts
             </Button>
@@ -181,7 +184,10 @@ const Navbar = () => {
             
               <Divider/>
             
-              <ListItemButton>
+              <ListItemButton
+              onClick={() => {
+                window.scroll({ top: 6140, behavior: "smooth" });
+              }}>
                 <ListItemText primary="Contact" sx={{p:"2px 20px"}} />
               </ListItemButton>
             
