@@ -137,6 +137,7 @@ const Contact = () => {
                 {/* <TextareaAutosize
                 /> */}
                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                 placeholder="Enter Yoyr Message"
                  name="message"
                  style={{resize:"none",color:"#333",border:"1px solid #ebebeb",background:"#f0f0f0",fontWeight:"600"}}
                  ></textarea>
