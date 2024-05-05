@@ -1,26 +1,28 @@
-import { Box, Button, CardContent, Stack, Typography } from "@mui/material";
-import React, { useContext, useEffect, useState } from "react";
-import bg from "../Media/bg.png";
-import { ColorModeContext, theme } from "../page";
+import { useAppSelector } from "@/lib/store/hook";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
+import { Box, Button, CardContent, Stack } from "@mui/material";
 import Link from "next/link";
+import bg from "../Media/bg.png";
 const Introduction = () => {
-  const [url,setUrl]=useState(`url(${bg.src})`)
-  const {mode}=useContext(ColorModeContext)
-  useEffect(()=>{
-    mode==="light"?setUrl(`url(${bg.src})`):setUrl("")
-  }
-  ,[mode])
+//-------------------constants-------------
+// const [url,setUrl]=useState(``)
+const mode=useAppSelector((state)=>state.themeOptions.mode)
+//-------------------useEffect-------------
+  // useEffect(()=>{
+  //   console.log("introduction mode",mode);
+  //   mode==="light"?setUrl(`url(${bg.src})`):setUrl("")
+  // }
+  // ,[mode])
   return (
     <Box
       sx={{
-        backgroundImage: url,
+        backgroundImage: `url(${mode==='light'?bg.src:""})`,
         width: "100%",
         display: "flex",
         justifyContent: "center",
       }}
+      className={`${mode==='dark'&&'bg-gradient-to-l from-gray-700 to-gray-600'}`}
     >
       <Box
         sx={{

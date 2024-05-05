@@ -1,12 +1,13 @@
-import {AppBar,Avatar,Box,Button,CardContent,Divider,Drawer,List,ListItemButton,ListItemText,Stack,Typography} from "@mui/material";
-import Link from "next/link";
-import Switch from '@mui/material/Switch';
-import { styled } from '@mui/material/styles';
-import React, { useContext, useState } from "react";
+import { useAppDispatch } from "@/lib/store/hook";
+import { toggleMode } from "@/lib/store/reducer/slice.theme";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Oswald } from "next/font/google";
+import { AppBar, Avatar, Box, Button, CardContent, Divider, Drawer, List, ListItemButton, ListItemText, Stack, Typography } from "@mui/material";
+import Switch from '@mui/material/Switch';
 import { purple } from "@mui/material/colors";
-import { ColorModeContext } from "./page";
+import { styled } from '@mui/material/styles';
+import { Oswald } from "next/font/google";
+import Link from "next/link";
+import { useState } from "react";
 const oswald = Oswald({ subsets: ["latin"], weight: "400" });
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -57,7 +58,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const {toggleColorMode}=useContext(ColorModeContext)
+  const dispatch=useAppDispatch()
   return (
     <AppBar className={oswald.className} sx={{ backgroundColor: "white" }}>
       <Stack
@@ -138,7 +139,7 @@ const Navbar = () => {
             >
               Contacts
             </Button>
-           <CardContent> <MaterialUISwitch onChange={toggleColorMode} /></CardContent>
+           <CardContent> <MaterialUISwitch onChange={()=>dispatch(toggleMode())} /></CardContent>
           </Stack>
         </CardContent>
         

@@ -1,39 +1,26 @@
+import { useAppSelector } from "@/lib/store/hook";
+import emailjs from "@emailjs/browser";
 import {
   Box,
   Button,
   Card,
   CardContent,
   Stack,
-  TextField,
-  TextareaAutosize,
-  Typography,
+  TextField
 } from "@mui/material";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import bg from "../Media/bg.png";
-import { ColorModeContext } from "../page";
-import { Textarea } from "@mui/joy";
-import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  //-------------------constants------------
   const [url, setUrl] = useState(`url(${bg.src})`);
-  const { mode } = useContext(ColorModeContext);
-  const name = useRef("");
-  const email = useRef("");
-  const message = useRef("");
-  const [isTextareaFocused, setIsTextareaFocused] = useState(false);
-
-  const handleTextareaFocus = () => {
-    setIsTextareaFocused(true);
-  };
-
-  const handleTextareaBlur = () => {
-    setIsTextareaFocused(false);
-  };
-
+  const mode=useAppSelector(state=>state.themeOptions.mode)
+  const form = useRef();
+  //-------------------useEffects------------
   useEffect(() => {
     mode === "light" ? setUrl(`url(${bg.src})`) : setUrl("");
   }, [mode]);
-  const form = useRef();
+  //-------------------handlers------------
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
@@ -134,8 +121,6 @@ const Contact = () => {
                   aligncontent: "center",
                 }}
                 >
-                {/* <TextareaAutosize
-                /> */}
                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                  placeholder="Enter Yoyr Message"
                  name="message"
