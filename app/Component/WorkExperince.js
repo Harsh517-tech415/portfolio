@@ -4,7 +4,6 @@ import {
   TimelineConnector,
   TimelineContent,
   TimelineDot,
-  TimelineItem,
   TimelineOppositeContent,
   TimelineSeparator,
 } from "@mui/lab";
@@ -13,21 +12,24 @@ import {
   Card,
   CardContent,
   CardHeader,
+  Grid,
   Hidden,
   List,
   ListItem,
+  ListItemIcon,
   Stack,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { workExperince } from "../utils/constants";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
 const WorkExperince = () => {
   const theme = useTheme();
   const matchDownSM = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <CardContent id="work-experence">
+    <div id="work-experence" className="text-black dark:bg-slate-600">
       <Typography className="text-center text-3xl font-bold uppercase">
         Work Experince
       </Typography>
@@ -42,119 +44,132 @@ const WorkExperince = () => {
           }}
         ></Box>
       </CardContent>
-      <Timeline position={"right"} className="p-0 space-y-2">
+      <Timeline position={"right"} className="space-y-2 p-0">
         {workExperince.map((singleCompany, index) => (
-          <Box
-            key={index}
-            component={Stack}
-            direction={"row"}
-            className="w-fit"
-          >
+          <Grid key={index} container>
             {!matchDownSM && (
               <TimelineOppositeContent
+                component={Grid}
+                item
+                sm={4}
+                md={2}
                 sx={{ m: "auto 0" }}
-                className="w-fit"
-                align="right"
+                className="dark:text-white"
                 variant="body2"
                 color="text.secondary"
               >
-                <CardHeader
-                  title={
-                    <Typography className="text-lg font-bold">
-                      {singleCompany.title}
-                    </Typography>
-                  }
-                  subheader={
-                    <div>
-                      <Typography>{singleCompany.sub_header}</Typography>
-                      <Typography>
-                        {singleCompany.time_line.start_time} -{" "}
-                        {singleCompany.time_line.end_time}
+                {!singleCompany.last_element && (
+                  <CardHeader
+                    title={
+                      <Typography className="dark:text-white text-lg font-bold">
+                        {singleCompany.title}
                       </Typography>
-                    </div>
-                  }
-                />
+                    }
+                    subheader={
+                      <div className="dark:text-white">
+                        <Typography>{singleCompany.sub_header}</Typography>
+                        <Typography>
+                          {singleCompany.time_line.start_time} -{" "}
+                          {singleCompany.time_line.end_time}
+                        </Typography>
+                      </div>
+                    }
+                  />
+                )}
               </TimelineOppositeContent>
             )}
-            <TimelineSeparator>
-              <TimelineConnector />
-              <TimelineDot color={singleCompany.current ? "info" : "success"}>
-                <WorkIcon sx={{ color: "white" }} />
-              </TimelineDot>
-              <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent sx={{ py: "12px", px: 2 }} component={Card}>
-              <Hidden smUp>
-                <CardHeader
-                  title={
-                    <Typography className="text-lg font-bold">
-                      {singleCompany.title}
-                    </Typography>
+            <Grid item xs={4} sm={1} container>
+              <TimelineSeparator>
+                <TimelineConnector />
+                <TimelineDot
+                  color={
+                    singleCompany.last_element
+                      ? "secondary"
+                      : singleCompany.current
+                      ? "info"
+                      : "success"
                   }
-                  subheader={
-                    <div>
-                      <Typography>{singleCompany.sub_header}</Typography>
-                      <Typography>
-                        {singleCompany.time_line.start_time} -{" "}
-                        {singleCompany.time_line.end_time}
+                >
+                  <WorkIcon sx={{ color: "white" }} />
+                </TimelineDot>
+                <TimelineConnector />
+              </TimelineSeparator>
+            </Grid>
+            {singleCompany.last_element ? (
+              <div className="text-2xl font-extrabold flex items-center dark:text-white">
+                {singleCompany.last_element_message}
+              </div>
+            ) : (
+              <Grid
+                item
+                xs={8}
+                sm={6}
+                md={9}
+                component={Card}
+                className="dark:bg-slate-700 dark:text-white w-full p-4"
+              >
+                <Hidden smUp>
+                  <CardHeader
+                    title={
+                      <Typography className="text-lg font-bold">
+                        {singleCompany.title}
                       </Typography>
-                    </div>
-                  }
-                />
-              </Hidden>
-              <div className="divide-y-2">
-              {singleCompany.project_description.map(
-                  (singleProject, projectIndex) => (
-                    <div key={projectIndex}>
-                      <CardHeader
-                        title={
-                          <Typography className="text-lg font-bold">
-                            {singleProject.title}
-                          </Typography>
-                        }
-                        subheader={
-                          <Typography className="text-sm text-gray-500">
-                            {singleProject.time_line.start_time} -{" "}
-                            {singleProject.time_line.end_time}
-                          </Typography>
-                        }
-                      />
-                      <List>
-                        {singleProject.description.map(
-                          (singleDescription, singleDescriptionIndex) => (
-                            <p
-                              dangerouslySetInnerHTML={{
-                                __html: singleDescription,
-                              }}
-                              key={singleDescriptionIndex}
-                            ></p>
-                          )
-                        )}
-                      </List>
-                    </div>
-                  )
-              )}
+                    }
+                    subheader={
+                      <div>
+                        <Typography>{singleCompany.sub_header}</Typography>
+                        <Typography>
+                          {singleCompany.time_line.start_time} -{" "}
+                          {singleCompany.time_line.end_time}
+                        </Typography>
+                      </div>
+                    }
+                  />
+                </Hidden>
+
+                <div className="space-y-4 divide-y-2">
+                  {singleCompany.project_description.map(
+                    (singleProject, projectIndex) => (
+                      <div key={projectIndex}>
+                        <CardHeader
+                          title={
+                            <Typography className="text-lg font-bold">
+                              {singleProject.title}
+                            </Typography>
+                          }
+                          subheader={
+                            <Typography className="text-sm text-gray-500 dark:text-gray-200">
+                              {singleProject.time_line.start_time} -{" "}
+                              {singleProject.time_line.end_time}
+                            </Typography>
+                          }
+                        />
+                        <List>
+                          {singleProject.description.map(
+                            (singleDescription, singleDescriptionIndex) => (
+                              <ListItem key={singleDescriptionIndex}>
+                                <ListItemIcon>
+                                  <FiberManualRecordIcon className="text-gray-500 dark:text-gray-300"/>
+                                </ListItemIcon>
+                                <p
+                                  dangerouslySetInnerHTML={{
+                                    __html: singleDescription,
+                                  }}
+                                ></p>
+                              </ListItem>
+                            )
+                          )}
+                        </List>
+                      </div>
+                    )
+                  )}
                 </div>
-            </TimelineContent>
-          </Box>
+              </Grid>
+            )}
+          </Grid>
         ))}
-        <Box
-          component={matchDownSM ? Stack : TimelineItem}
-          className={`flex ${matchDownSM ? "flex-row" : "flex-none"}`}
-        >
-          <TimelineSeparator>
-            <TimelineDot color="secondary">
-              <WorkIcon />
-            </TimelineDot>
-          </TimelineSeparator>
-          <TimelineContent sx={{ py: "12px", px: 2 }}>
-            <Typography variant="h6" component="span">
-              Journey Starts Here
-            </Typography>
-          </TimelineContent>
-        </Box>
       </Timeline>
-    </CardContent>
+    </div>
   );
 };
 

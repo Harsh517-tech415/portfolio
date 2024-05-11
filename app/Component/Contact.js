@@ -11,14 +11,8 @@ import { useRef } from "react";
 
 const Contact = () => {
   //-------------------constants------------
-  // const [url, setUrl] = useState(`url(${bg.src})`);
-  // const mode=useAppSelector(state=>state.themeOptions.mode)
   const form = useRef();
   //-------------------useEffects------------
-  // useEffect(() => {
-  //   mode === "light" ? setUrl(`url(${bg.src})`) : setUrl("");
-  // }, [mode]);
-  //-------------------handlers------------
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
@@ -39,14 +33,10 @@ const Contact = () => {
   };
 
   return (
-    <Box
-    id="contact"
-      sx={{
-        // backgroundImage: url,
-        width: "100%",
-        justifyContent: "center",
-      }}
-    >
+  <div className="
+  dark:bg-slate-600
+  ">
+
       <Box sx={{ pt: "100px" }}>
         <CardContent
           sx={{
@@ -76,7 +66,6 @@ const Contact = () => {
             justifyContent: "center",
           }}
         >
-          {" "}
           <CardContent
             sx={{
               display: "flex",
@@ -151,7 +140,7 @@ const Contact = () => {
             </form>
         </Card>
       </CardContent>
-    </Box>
+      </div>
   );
 };
 

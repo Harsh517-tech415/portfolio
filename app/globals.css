@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-textarea.focused {
+/* textarea.focused {
     outline: none;
     border-color: transparent;
     caret-color: black;
@@ -17,4 +17,4 @@ textarea.focused {
     50% {
       border-color: black;
     }
-  }
+  } */

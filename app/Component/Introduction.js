@@ -2,7 +2,6 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Box, Button, CardContent, Stack } from "@mui/material";
 import Link from "next/link";
-import bg from "../Media/bg.png";
 import { useAppDispatch } from "@/lib/store/hook";
 import { scrollToContact } from "@/lib/store/reducer/slice.theme";
 
@@ -16,9 +15,8 @@ const Introduction = () => {
         width: "100%",
         display: "flex",
         justifyContent: "center",
-        backgroundImage: `url(${bg.src})`,
       }}
-      className={`dark:bg-slate-800  dark:text-white`}
+      className={`bg-gradient-to-b from-purple-500 to-white-500 dark:bg-slate-800  dark:text-white`}
     >
       <Box
         sx={{

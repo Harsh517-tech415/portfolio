@@ -43,4 +43,12 @@ export const workExperince = [
       },
     ],
   },
+  {
+    title: "",
+    last_element:true,
+    time_line: { start_time: "", end_time: "" },
+    sub_header: "",
+    current:false,
+    last_element_message:"Journey Starts Here"
+  },
 ];
