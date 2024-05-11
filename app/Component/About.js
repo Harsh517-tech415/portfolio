@@ -1,10 +1,8 @@
-import { SpaceBar } from "@mui/icons-material";
 import { Box, Button, CardContent, Container, Stack, Typography } from "@mui/material";
-import React from "react";
 
 const About = () => {
   return (
-    <Container sx={{ pt: "113px", pb: "113px" }}>
+    <Container id="about">
       <Box sx={{mb:"90px"}}>
       <CardContent sx={{ textAlign: "center", pb: "0px" }}>
         <Typography
@@ -73,26 +71,24 @@ const About = () => {
         <Box sx={{ width: {md:"40%"}}}>
             <CardContent sx={{fontWeight:"bold",fontSize:"26px",pb:"30px"}}>MY SKILLS</CardContent>
             <Box sx={{display:"flex",flexWrap:"wrap"}} gap={3}>
-                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px"}}>ReactJs</CardContent>
-                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px"}}>NextJs</CardContent>
-                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px"}}>Gitub</CardContent>
-                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px"}}>SAAS</CardContent>
-                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px"}}>ExpressJs</CardContent>
-                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px"}}>C++</CardContent>
-                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px"}}>Netlify</CardContent>
-                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px",p:"auto"}}>CSS</CardContent>
-                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px"}}>Firebase</CardContent>
-                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px"}}>Javascript</CardContent>
-                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px"}}>Responsive</CardContent>
-                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px",p:"auto"}}>HTML</CardContent>
-                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px"}}>Material UI</CardContent>
-                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",color:"#666666",borderRadius:"5px"}}>MySQL</CardContent>
+                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",borderRadius:"5px"}}>C++</CardContent>
+                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",borderRadius:"5px"}}>Typescript</CardContent>
+                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",borderRadius:"5px"}}>ReactJs</CardContent>
+                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",borderRadius:"5px"}}>Redux</CardContent>
+                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",borderRadius:"5px"}}>ExpressJs</CardContent>
+                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",borderRadius:"5px"}}>MongoDb</CardContent>
+                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",borderRadius:"5px"}}>NextJs</CardContent>
+                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",borderRadius:"5px"}}>Gitub</CardContent>
+                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",borderRadius:"5px"}}>SAAS</CardContent>
+                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",borderRadius:"5px"}}>Netlify</CardContent>
+                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",borderRadius:"5px"}}>Firebase</CardContent>
+                <CardContent sx={{backgroundColor:"rgba(153, 153, 153, 0.2)",borderRadius:"5px"}}>MySQL</CardContent>
 
             </Box>
         </Box>
       </Stack>
         <CardContent sx={{pl:"0px"}}>
-          <Button variant="outlined" color="secondary" sx={{color:"black",fontWeight:"bold",fontSize:"18px",p:"6px 40px",boxShadow:"0 0 3px 1px grey",mt:"15px"}}>Contact</Button>
+          <Button variant="outlined" color="secondary" sx={{fontWeight:"bold",fontSize:"18px",p:"6px 40px",boxShadow:"0 0 3px 1px grey",mt:"15px"}} onClick={()=>{const contactElement=document.getElementById('contact');contactElement.scrollIntoView({behavior:"smooth",block:"center",inline:"center"})}}>Contact</Button>
         </CardContent>
     </Container>
   );

@@ -1,4 +1,3 @@
-import { useAppSelector } from "@/lib/store/hook";
 import emailjs from "@emailjs/browser";
 import {
   Box,
@@ -8,18 +7,17 @@ import {
   Stack,
   TextField
 } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
-import bg from "../Media/bg.png";
+import { useRef } from "react";
 
 const Contact = () => {
   //-------------------constants------------
-  const [url, setUrl] = useState(`url(${bg.src})`);
-  const mode=useAppSelector(state=>state.themeOptions.mode)
+  // const [url, setUrl] = useState(`url(${bg.src})`);
+  // const mode=useAppSelector(state=>state.themeOptions.mode)
   const form = useRef();
   //-------------------useEffects------------
-  useEffect(() => {
-    mode === "light" ? setUrl(`url(${bg.src})`) : setUrl("");
-  }, [mode]);
+  // useEffect(() => {
+  //   mode === "light" ? setUrl(`url(${bg.src})`) : setUrl("");
+  // }, [mode]);
   //-------------------handlers------------
   const sendEmail = (e) => {
     e.preventDefault();
@@ -42,8 +40,9 @@ const Contact = () => {
 
   return (
     <Box
+    id="contact"
       sx={{
-        backgroundImage: url,
+        // backgroundImage: url,
         width: "100%",
         justifyContent: "center",
       }}

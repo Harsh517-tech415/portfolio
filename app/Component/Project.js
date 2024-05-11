@@ -86,7 +86,7 @@ const Project = () => {
     }
   }, [value]);
   return (
-    <Box>
+    <Box id="project">
       <CardContent
         sx={{
           textAlign: "center",
@@ -132,7 +132,7 @@ const Project = () => {
         </CardContent>
       </CardContent>
       <CardContent sx={{ display: "flex", justifyContent: "center" }}>
-        <Stack sx={{ p: {md:"100px 28px"}, ml: "10%", mr: "10%" }}>
+        <Stack sx={{ p: { md: "100px 28px" }, ml: "10%", mr: "10%" }}>
           <Stack
             direction={{ xs: "column", lg: "row" }}
             sx={{ pb: "20px" }}
@@ -216,11 +216,7 @@ const Project = () => {
           </Stack>
           <Divider sx={{ p: "50px 0px" }} />
 
-          <Stack
-            direction={{ xs: "column", lg: "row" }}
-
-            gap={6}
-          >
+          <Stack direction={{ xs: "column", lg: "row" }} gap={6}>
             <Stack sx={{ width: { lg: "40%" } }}>
               <Tabs
                 textColor="secondary"
@@ -298,11 +294,7 @@ const Project = () => {
             </Stack>
           </Stack>
           <Divider sx={{ p: "50px 0px" }} />
-          <Stack
-            direction={{ xs: "column", lg: "row" }}
-
-            gap={6}
-          >
+          <Stack direction={{ xs: "column", lg: "row" }} gap={6}>
             <Stack sx={{ width: { lg: "40%" } }}>
               {" "}
               <Tabs
@@ -382,11 +374,7 @@ const Project = () => {
             </Stack>
           </Stack>
           <Divider sx={{ p: "50px 0px" }} />
-          <Stack
-            direction={{ xs: "column", lg: "row" }}
-
-            gap={6}
-          >
+          <Stack direction={{ xs: "column", lg: "row" }} gap={6}>
             <Stack sx={{ width: { lg: "40%" } }}>
               {" "}
               <Tabs
