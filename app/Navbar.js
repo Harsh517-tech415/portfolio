@@ -3,6 +3,7 @@ import {
   scrollToAbout,
   scrollToContact,
   scrollToProject,
+  scrollToWorkExperence,
   toggleMode,
 } from "@/lib/store/reducer/slice.theme";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -114,6 +115,12 @@ const Navbar = () => {
             onClick={() => dispatch(scrollToProject())}
           >
             Projects
+          </Typography>
+          <Typography
+            className="cursor-pointer text-md font-semibold"
+            onClick={() => dispatch(scrollToWorkExperence())}
+          >
+            Work Experence
           </Typography>
           <Typography
             className="cursor-pointer text-md font-semibold"
