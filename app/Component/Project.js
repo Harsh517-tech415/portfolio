@@ -153,16 +153,16 @@ const Project = () => {
                 <Tab icon={<SmartphoneIcon />} />
               </Tabs>
               <TabPanel value={value} index={0}>
-                <Image src={lap1} />
+                <Image src={lap1} alt={"lap1"} />
               </TabPanel>
               <TabPanel value={value} index={1}>
-                <Image src={desk1} />
+                <Image src={desk1} alt={"desk1"} />
               </TabPanel>
               <TabPanel value={value} index={2}>
-                <Image src={tab1} />
+                <Image src={tab1} alt={"tab1"} />
               </TabPanel>
               <TabPanel value={value} index={3}>
-                <Image src={mobile1} />
+                <Image src={mobile1} alt={"mobile1"} />
               </TabPanel>
             </Box>
             <Stack sx={{ width: { lg: "40%" }, mt: { lg: "8%" } }}>
@@ -174,7 +174,7 @@ const Project = () => {
                 platform tailored for passionate fitness enthusiasts. Discover a
                 wide range of personalized workouts, curated resources, and
                 tools designed to empower and inspire you on your fitness
-                journey. Embrace a healthier, stronger, and more fulfilling
+                journey. Embrace a healthy, stronger, and more fulfilling
                 lifestyle with FitFinder as your trusted companion.
               </CardContent>
               <Stack direction="row">
@@ -232,16 +232,16 @@ const Project = () => {
                 <Tab icon={<SmartphoneIcon />} />
               </Tabs>
               <TabPanel value={value} index={0}>
-                <Image src={lap2} />
+                <Image src={lap2} alt={"lap2"} />
               </TabPanel>
               <TabPanel value={value} index={1}>
-                <Image src={desk2} />
+                <Image src={desk2} alt={"desk2"} />
               </TabPanel>
               <TabPanel value={value} index={2}>
-                <Image src={tab2} />
+                <Image src={tab2} alt={"tab2"} />
               </TabPanel>
               <TabPanel value={value} index={3}>
-                <Image src={mobile2} />
+                <Image src={mobile2} alt={"mobile2"} />
               </TabPanel>
             </Stack>
             <Stack sx={{ width: { lg: "40%" }, mt: { lg: "8%" } }}>
@@ -311,16 +311,16 @@ const Project = () => {
                 <Tab icon={<SmartphoneIcon />} />
               </Tabs>
               <TabPanel value={value} index={0}>
-                <Image src={lap3} />
+                <Image src={lap3} alt={"lap3"} />
               </TabPanel>
               <TabPanel value={value} index={1}>
-                <Image src={desk3} />
+                <Image src={desk3} alt={"desk3"} />
               </TabPanel>
               <TabPanel value={value} index={2}>
-                <Image src={tab3} />
+                <Image src={tab3} alt={"tab3"} />
               </TabPanel>
               <TabPanel value={value} index={3}>
-                <Image src={mobile3} />
+                <Image src={mobile3} alt={"mobile3"} />
               </TabPanel>
             </Stack>
             <Stack sx={{ width: { lg: "40%" }, mt: { lg: "8%" } }}>
@@ -391,13 +391,13 @@ const Project = () => {
                 <Tab icon={<SmartphoneIcon />} />
               </Tabs>
               <TabPanel value={value} index={0}>
-                <Image src={lap4} />
+                <Image src={lap4} alt={"lap4"} />
               </TabPanel>
               <TabPanel value={value} index={1}>
-                <Image src={desk4} />
+                <Image src={desk4} alt={"desk4"} />
               </TabPanel>
               <TabPanel value={value} index={2}>
-                <Image src={tab4} />
+                <Image src={tab4} alt={"tab4"} />
               </TabPanel>
             </Stack>
             <Stack sx={{ width: { lg: "40%" }, mt: { lg: "8%" } }}>
