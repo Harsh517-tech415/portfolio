@@ -1,30 +1,34 @@
 import emailjs from "@emailjs/browser";
 import {
+  Alert,
   Box,
   Button,
   Card,
   CardContent,
+  Snackbar,
   Stack,
-  TextField
+  TextField,
 } from "@mui/material";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const Contact = () => {
   //-------------------constants------------
   const form = useRef();
+  const [openSnackBar, setOpenSnackBar] = useState(false);
   //-------------------useEffects------------
   const sendEmail = (e) => {
     e.preventDefault();
+    console.log("form.current",form.current);
     emailjs
       .sendForm(
-        "service_3j7y9bb",
-        "template_ehib2ny",
+        "service_vapyl3i",
+        "template_qulfmuv",
         form.current,
-        "kE9Nc48ftp9tczFp6"
+        "CnzaNxrGbBMyvQqj4"
       )
       .then(
         (result) => {
-          console.log(result.text);
+          setOpenSnackBar(true);
         },
         (error) => {
           console.log(error.text);
@@ -33,10 +37,11 @@ const Contact = () => {
   };
 
   return (
-  <div className="
+    <div
+      className="
   dark:bg-slate-600
-  ">
-
+  "
+    >
       <Box sx={{ pt: "100px" }}>
         <CardContent
           sx={{
@@ -83,45 +88,87 @@ const Contact = () => {
         </CardContent>
       </Box>
       <CardContent sx={{ display: "flex", justifyContent: "center" }}>
-        <Card sx={{ width: {xs:"70%",md:"50%",lg:"35%"} }}>
-            <form ref={form} onSubmit={sendEmail}>
-          <Stack sx={{ p: "10px 20px" }}>
-              <CardContent sx={{fontWeight:"bold",color:"#666",textAlign:"left"}}>Name</CardContent>
+        <Card sx={{ width: { xs: "70%", md: "50%", lg: "35%" } }}>
+          <form ref={form} onSubmit={sendEmail}>
+            <Stack sx={{ p: "10px 20px" }}>
+              <CardContent
+                sx={{ fontWeight: "bold", color: "#666", textAlign: "left" }}
+              >
+                Name
+              </CardContent>
               <TextField
+              required
                 placeholder="Enter Your Name"
                 type="text"
-                name="user_name"
-                 sx={{color:"#333",border:"1px solid #ebebeb",background:"#f0f0f0",fontWeight:"600"}}
+                name="from_name"
+                sx={{
+                  color: "#333",
+                  border: "1px solid #ebebeb",
+                  background: "#f0f0f0",
+                  fontWeight: "600",
+                }}
               />
-              <CardContent sx={{fontWeight:"bold",color:"#666",textAlign:"left",mt:"2%"}}>Email</CardContent>
+              <CardContent
+                sx={{
+                  fontWeight: "bold",
+                  color: "#666",
+                  textAlign: "left",
+                  mt: "2%",
+                }}
+              >
+                Email
+              </CardContent>
               <TextField
+              required
+              name="messenger"
                 placeholder="Enter Your Email"
                 type="email"
-                name="user_email"
-                sx={{color:"#333",border:"1px solid #ebebeb",background:"#f0f0f0",fontWeight:"600"}}
-
+                sx={{
+                  color: "#333",
+                  border: "1px solid #ebebeb",
+                  background: "#f0f0f0",
+                  fontWeight: "600",
+                }}
               />
-              <CardContent sx={{fontWeight:"bold",color:"#666",textAlign:"left",mt:"2%"}}>Mesaage</CardContent>
+              <CardContent
+                sx={{
+                  fontWeight: "bold",
+                  color: "#666",
+                  textAlign: "left",
+                  mt: "2%",
+                }}
+              >
+                Mesaage
+              </CardContent>
               <Card
                 sx={{
                   justifyContent: "center",
                   alignItems: "center",
                   aligncontent: "center",
                 }}
-                >
-                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                 placeholder="Enter Yoyr Message"
-                 name="message"
-                 style={{resize:"none",color:"#333",border:"1px solid #ebebeb",background:"#f0f0f0",fontWeight:"600"}}
-                 ></textarea>
-
+              >
+                <textarea
+                required
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                  placeholder="Enter Yoyr Message"
+                  name="message"
+                  style={{
+                    resize: "none",
+                    color: "#333",
+                    border: "1px solid #ebebeb",
+                    background: "#f0f0f0",
+                    fontWeight: "600",
+                  }}
+                ></textarea>
               </Card>
               <CardContent sx={{ justifyContent: "center" }}>
                 <Button
                   type="submit"
                   sx={{ backgroundColor: "purple" }}
                   value="Send"
-                  >
+                >
                   <CardContent
                     variant="contained"
                     sx={{
@@ -136,11 +183,23 @@ const Contact = () => {
                   </CardContent>
                 </Button>
               </CardContent>
-          </Stack>
-            </form>
+            </Stack>
+          </form>
         </Card>
       </CardContent>
-      </div>
+      {openSnackBar && (
+        <Snackbar open={open} autoHideDuration={6000} onClose={()=>setOpenSnackBar(false)}>
+          <Alert
+            onClose={()=>setOpenSnackBar(false)}
+            severity="success"
+            variant="filled"
+            sx={{ width: "100%" }}
+          >
+            Thanks for contacting me.Will contact you soon.{" "}
+          </Alert>
+        </Snackbar>
+      )}
+    </div>
   );
 };
 
